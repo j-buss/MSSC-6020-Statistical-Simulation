@@ -2,11 +2,12 @@ project:
   type: website
 
 website:
-  title: "Simulation - Ross Sheldon"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
+  sidebar: 
+    style: "docked"
+    contents:
+      - index.qmd
+      - src/Chapter_03.qmd
+      - src/Chapter_04.qmd
 
 format:
   html:

@@ -1,5 +1,5 @@
 ---
-title: "Simulation by Ross Sheldon"
+title: "Home"
 ---
 
 Just a little website to document learning for the book Simulation by Ross Sheldon.

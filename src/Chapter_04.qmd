@@ -1,10 +1,12 @@
 ---
-title: "Chapter 4 - Generating discrete random variables"
+title: "Chapter 4"
 format: html
 editor: visual
+execute:
+  freeze: auto
 ---
 
-## Quarto
+## Generating Discrete Random Variables
 
 Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
