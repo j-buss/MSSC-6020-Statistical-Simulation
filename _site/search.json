@@ -32,7 +32,7 @@
     "href": "src/Chapter_03.html",
     "title": "Chapter 3",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\n\\[\na\n\\]"
+    "text": "Also known as a Lehmer random number generator.\n\\[\nx_n = a x_{n-1} \\,\\text{mod}\\, m\n\\]\nThe limits on the parameters are: \\(0 &lt; x_0 &lt;m\\)\nIf we use the values\n\n\\(a = 2\\)\n\\(m = 7\\)\n\\(x_0 = 6\\)\n\nWe have:\n\nFruit prices\n\n\n\n\n\n\\(X\\)\n\n\n\n\n\\(x_0=6\\)\n\n\n\\(x_1=5=2 \\cdot 6 \\;\\text{mod}\\; 7\\)\n\n\n\\(x_2=3=2 \\cdot 5 \\;\\text{mod}\\; 7\\)\n\n\n\\(x_3=6=2 \\cdot 3 \\;\\text{mod}\\; 7\\)\n\n\n\n\nmulcm &lt;- function(a, m, seed, iterations = 1) {\n  # m &lt;- 150\n  # a &lt;- 3\n  # seed &lt;- 5\n  # iterations &lt;- 3\n  counter &lt;- 1\n  \n  temp_val &lt;- seed\n  output_vector &lt;- c(temp_val)\n  while(counter &lt;= iterations){\n    temp_val &lt;- a * temp_val %% m\n    output_vector &lt;- c(output_vector, temp_val)\n    counter &lt;- counter + 1\n  }\n  output_vector\n}\n\n\nmulcm(3, 150, 5, iterations = 10)\n\n [1]   5  15  45 135 405 315  45 135 405 315  45\n\n\n\n\nLinear congruential generator (LCG):"
   },
   {
     "objectID": "src/Chapter_03.html#random-numbers",
@@ -47,5 +47,12 @@
     "title": "Chapter 3",
     "section": "Running Code",
     "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "src/Chapter_03.html#pseudorandom-number-generation",
+    "href": "src/Chapter_03.html#pseudorandom-number-generation",
+    "title": "Chapter 3",
+    "section": "",
+    "text": "Also known as a Lehmer random number generator.\n\\[\nx_n = a x_{n-1} \\,\\text{mod}\\, m\n\\]\nThe limits on the parameters are: \\(0 &lt; x_0 &lt;m\\)\nIf we use the values\n\n\\(a = 2\\)\n\\(m = 7\\)\n\\(x_0 = 6\\)\n\nWe have:\n\nFruit prices\n\n\n\n\n\n\\(X\\)\n\n\n\n\n\\(x_0=6\\)\n\n\n\\(x_1=5=2 \\cdot 6 \\;\\text{mod}\\; 7\\)\n\n\n\\(x_2=3=2 \\cdot 5 \\;\\text{mod}\\; 7\\)\n\n\n\\(x_3=6=2 \\cdot 3 \\;\\text{mod}\\; 7\\)\n\n\n\n\nmulcm &lt;- function(a, m, seed, iterations = 1) {\n  # m &lt;- 150\n  # a &lt;- 3\n  # seed &lt;- 5\n  # iterations &lt;- 3\n  counter &lt;- 1\n  \n  temp_val &lt;- seed\n  output_vector &lt;- c(temp_val)\n  while(counter &lt;= iterations){\n    temp_val &lt;- a * temp_val %% m\n    output_vector &lt;- c(output_vector, temp_val)\n    counter &lt;- counter + 1\n  }\n  output_vector\n}\n\n\nmulcm(3, 150, 5, iterations = 10)\n\n [1]   5  15  45 135 405 315  45 135 405 315  45\n\n\n\n\nLinear congruential generator (LCG):"
   }
 ]

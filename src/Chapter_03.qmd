@@ -8,12 +8,73 @@ execute:
 
 # Random Numbers
 
-
 ## 3.1 Pseudorandom number generation
 
-#### Multiplicative Congruential Method
+### Multiplicative Congruential Method
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+Also known as a [Lehmer random number generator](https://en.wikipedia.org/wiki/Lehmer_random_number_generator).
+
+$$
+x_n = a x_{n-1} \,\text{mod}\, m
+$$
+
+The limits on the parameters are: $0 < x_0 <m$
+
+If we use the values
+
+-   $a = 2$
+-   $m = 7$
+-   $x_0 = 6$
+
+We have:
+
+|                $X$                 |
+|:----------------------------------:|
+|              $x_0=6$               |
+| $x_1=5=2 \cdot 6 \;\text{mod}\; 7$ |
+| $x_2=3=2 \cdot 5 \;\text{mod}\; 7$ |
+| $x_3=6=2 \cdot 3 \;\text{mod}\; 7$ |
+
+```{r}
+lehmer.rng <- function(x0, a, m, iterations = 1) {
+  counter <- 1
+  temp_val <- x0
+  output_vector <- c(temp_val)
+  while(counter <= iterations){
+    temp_val <- (a * temp_val) %% m
+    output_vector <- c(output_vector, temp_val)
+    counter <- counter + 1
+  }
+  output_vector
+}
+```
+
+```{r}
+mulcm(x0=6, a=2, m=7, iterations = 10)
+```
 
 #### Mixed Congruential Method
 
+[Linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) (LCG):
+
+```{r}
+lcg.rng <- function(x0, a, c, m, iterations = 1) {
+  counter <- 1
+  temp_val <- x0
+  output_vector <- c(temp_val)
+  while(counter < iterations){
+    temp_val <- (a * temp_val + c) %% m
+    output_vector <- c(output_vector, temp_val)
+    counter <- counter + 1
+  }
+  output_vector
+}
+```
+
+```{r}
+lcg.rng(x0=3, a=5, c=7, m=200)
+```
+
+```{r}
+lcg(1)
+```
