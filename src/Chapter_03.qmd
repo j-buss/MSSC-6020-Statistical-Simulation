@@ -36,7 +36,7 @@ We have:
 | $x_3=6=2 \cdot 3 \;\text{mod}\; 7$ |
 
 ```{r}
-lehmer.rng <- function(x0, a, m, iterations = 1) {
+lehmer.seq <- function(x0, a, m, iterations = 1) {
   counter <- 1
   temp_val <- x0
   output_vector <- c(temp_val)
@@ -50,7 +50,11 @@ lehmer.rng <- function(x0, a, m, iterations = 1) {
 ```
 
 ```{r}
-mulcm(x0=6, a=2, m=7, iterations = 10)
+lehmer.rng()
+```
+
+```{r}
+lehmer.seq(x0=6, a=2, m=7, iterations = 10)
 ```
 
 #### Mixed Congruential Method
