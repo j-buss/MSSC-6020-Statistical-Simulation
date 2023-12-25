@@ -2,4 +2,8 @@
 title: "Home"
 ---
 
-Just a little website to accompany the class MSSC 6020 at Marquette. Reference textbook for the class is [Simulation](https://shop.elsevier.com/books/simulation/ross/978-0-323-85738-3) by Ross Sheldon.
+Just a little website to accompany the class MSSC 6020 - Statistical Simulation at Marquette. The textbook used for the class is [Simulation](https://shop.elsevier.com/books/simulation/ross/978-0-323-85738-3) by Ross Sheldon.
+
+I have developed code found in github: [RSSim](https://github.com/j-buss/RSSim)
+
+Please note that code used here and in the accompanying package RSSim are for educational purposes only. This is designed to help you grasp key concepts in statistical simulation. The code presented here is ideal for learning and exploration but may not be the most suitable choice for industry deployment. For robust execution and optimal performance in real-world applications, consider leveraging other standard packages in R.
