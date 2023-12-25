@@ -1,1 +1,1 @@
-Sitemap: https://j-buss.github.io/MSSC-6020-Statistical-Simulation/sitemap.xml
+Sitemap: https://github.com/j-buss/MSSC-6020-Statistical-Simulation/sitemap.xml
