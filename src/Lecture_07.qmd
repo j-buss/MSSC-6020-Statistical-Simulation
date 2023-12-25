@@ -1,0 +1,17 @@
+---
+title: "7. Multivar. Multiple Lin. Reg."
+format: html
+editor: visual
+execute:
+  freeze: auto
+---
+
+# Line
+
+## Univariate Simple Sampling
+
+## Univariate Simple Linear Regression
+
+## Univariate Multiple Linear Regression
+
+## Multivariate Multiple Linear Regression

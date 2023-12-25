@@ -1,0 +1,17 @@
+---
+title: "6. Line Fitting & Regression"
+format: html
+editor: visual
+execute:
+  freeze: auto
+---
+
+# Line
+
+## Least Squares Simple Regression
+
+## Least Squares Multiple Regression
+
+## Least Squares Orthogonal Regression
+
+## Experimental Design

@@ -1,0 +1,15 @@
+---
+title: "5. Symmetric Matrix PDFs"
+format: html
+editor: visual
+execute:
+  freeze: auto
+---
+
+# Symmetric Matrix PDFs
+
+Multivariate Gamma and Inverse Gamma
+
+## The Wishart PDF - Multivariate Gamma
+
+## The Inverse Wishart PDF - Multivariate Inverse Gamma

@@ -1,0 +1,19 @@
+---
+title: "8. Log. Reg. Analysis"
+format: html
+editor: visual
+execute:
+  freeze: auto
+---
+
+# Line
+
+## Logistic Regression Background
+
+## Logistic Regression Model
+
+## Logistic Regression Estimation
+
+## Logistic Regression Example
+
+## Logistic Regression Discussion

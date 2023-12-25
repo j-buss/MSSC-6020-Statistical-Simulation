@@ -1,12 +1,12 @@
 ---
-title: "Chapter 5"
+title: "3. Generating Cont. RVs"
 format: html
 editor: visual
 execute:
   freeze: auto
 ---
 
-# Generating Continuous Random Variables
+# Chapter 5
 
 ## 5.1 The Inverse Transform Algorithm
 

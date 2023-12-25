@@ -1,5 +1,5 @@
 ---
-title: "Chapter 3"
+title: "1. Numerical Integration"
 format: html
 editor: visual
 execute:
@@ -8,9 +8,7 @@ execute:
 
 # Numerical Integration
 
-
-
-# Random Numbers
+# Chapter 3 - Random Numbers
 
 ## 3.1 Pseudorandom number generation
 
@@ -88,4 +86,3 @@ lcg.rng(x0=3, a=5, c=7, m=200)
 ```
 
 ## 3.2 Using Random numbers to Evaluate Integrals
-

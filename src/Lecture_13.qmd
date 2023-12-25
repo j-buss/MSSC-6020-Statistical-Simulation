@@ -1,0 +1,17 @@
+---
+title: "13. Var. Reduction / MCMC"
+format: html
+editor: visual
+execute:
+  freeze: auto
+---
+
+# Statistical Analysis of Simulated Data
+
+## The Sample Mean and Sample Variance
+
+## Interval Estimates of a Population Mean
+
+## The Bootstrapping Technique for Estimating
+
+## Mean Square Errors

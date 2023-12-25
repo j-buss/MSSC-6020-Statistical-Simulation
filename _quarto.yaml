@@ -6,11 +6,19 @@ website:
     style: "docked"
     contents:
       - index.qmd
-      - src/Chapter_03.qmd
-      - src/Chapter_04.qmd
-      - src/Chapter_05.qmd
-      - src/Chapter_06.qmd
-      - src/Chapter_06_1.qmd
+      - src/Lecture_01.qmd
+      - src/Lecture_02.qmd
+      - src/Lecture_03.qmd
+      - src/Lecture_04.qmd
+      - src/Lecture_05.qmd
+      - src/Lecture_06.qmd
+      - src/Lecture_07.qmd
+      - src/Lecture_08.qmd
+      - src/Lecture_09.qmd
+      - src/Lecture_10.qmd
+      - src/Lecture_11.qmd
+      - src/Lecture_12.qmd
+      - src/Lecture_13.qmd
 
 format:
   html:

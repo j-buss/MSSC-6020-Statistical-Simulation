@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Chapter 3</title>
+<title>1 - Numerical Integration</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../src/Chapter_03.html">Chapter 3</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../src/Chapter_03.html">1 - Numerical Integration</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -138,19 +138,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../src/Chapter_03.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Chapter 3</span></a>
+ <span class="menu-text">1 - Numerical Integration</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../src/Chapter_04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Chapter 4</span></a>
+ <span class="menu-text">2. Generating Discrete RVs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../src/Chapter_05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Chapter 4</span></a>
+ <span class="menu-text">Chapter 5</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../src/Chapter_06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 6</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../src/Chapter_06_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Symmetric Matrix PDFs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../src/Chapter_06_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Line Fitting and Regression</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../src/Chapter_06_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multivariate Multiple Linear Regression</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../src/Chapter_06_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Logistic Regression Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../src/Chapter_08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 8</span></a>
   </div>
 </li>
     </ul>
@@ -163,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#numerical-integration" id="toc-numerical-integration" class="nav-link active" data-scroll-target="#numerical-integration">Numerical Integration</a></li>
+  <li><a href="#chapter-3---numerical-integration" id="toc-chapter-3---numerical-integration" class="nav-link active" data-scroll-target="#chapter-3---numerical-integration">Chapter 3 - Numerical Integration</a></li>
   <li><a href="#random-numbers" id="toc-random-numbers" class="nav-link" data-scroll-target="#random-numbers">Random Numbers</a>
   <ul class="collapse">
   <li><a href="#pseudorandom-number-generation" id="toc-pseudorandom-number-generation" class="nav-link" data-scroll-target="#pseudorandom-number-generation">3.1 Pseudorandom number generation</a>
@@ -180,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Chapter 3</h1>
+<h1 class="title">1 - Numerical Integration</h1>
 </div>
 
 
@@ -195,8 +231,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="numerical-integration" class="level1">
-<h1>Numerical Integration</h1>
+<section id="chapter-3---numerical-integration" class="level1">
+<h1>Chapter 3 - Numerical Integration</h1>
 </section>
 <section id="random-numbers" class="level1">
 <h1>Random Numbers</h1>

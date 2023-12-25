@@ -1,12 +1,12 @@
 ---
-title: "Chapter 6"
+title: "4. Multivariate Normal Dist."
 format: html
 editor: visual
 execute:
   freeze: auto
 ---
 
-# The Multivariate Normal Distribution
+# Chapter 6 - The Multivariate Normal Distribution
 
 ## 6.1 The Multivariate Normal
 
