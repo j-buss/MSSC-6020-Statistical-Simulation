@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "src/Lecture_05.html",
-    "href": "src/Lecture_05.html",
-    "title": "5. Symmetric Matrix PDFs",
-    "section": "",
-    "text": "Multivariate Gamma and Inverse Gamma"
-  },
-  {
     "objectID": "src/Lecture_01.html",
     "href": "src/Lecture_01.html",
     "title": "1. Numerical Integration",
@@ -33,5 +26,12 @@
     "title": "Home",
     "section": "",
     "text": "Just a little website to document learning for the book Simulation by Ross Sheldon."
+  },
+  {
+    "objectID": "src/Lecture_05.html",
+    "href": "src/Lecture_05.html",
+    "title": "5. Symmetric Matrix PDFs",
+    "section": "",
+    "text": "Multivariate Gamma and Inverse Gamma"
   }
 ]
