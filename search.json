@@ -25,7 +25,7 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "Just a little website to accompany the class MSSC 6020 at Marquette. Reference textbook for the class is Simulation by Ross Sheldon."
+    "text": "Just a little website to accompany the class MSSC 6020 - Statistical Simulation at Marquette. The textbook used for the class is Simulation by Ross Sheldon.\nI have developed code found in github: RSSim\nPlease note that code used here and in the accompanying package RSSim are for educational purposes only. This is designed to help you grasp key concepts in statistical simulation. The code presented here is ideal for learning and exploration but may not be the most suitable choice for industry deployment. For robust execution and optimal performance in real-world applications, consider leveraging other standard packages in R."
   },
   {
     "objectID": "src/Lecture_05.html",
