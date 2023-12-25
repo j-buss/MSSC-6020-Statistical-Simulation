@@ -3,12 +3,20 @@ title: "1. Numerical Integration"
 format: html
 editor: visual
 execute:
-  freeze: auto
+  echo: false
+  warning: false
+  error: false
 ---
 
 ```{r}
-#install.packages("devtools")
 library(devtools)
+```
+
+
+```{r}
+#| echo: true
+#| message: false
+
 install_github("j-buss/RSSim")
 library(RSSim)
 ```
