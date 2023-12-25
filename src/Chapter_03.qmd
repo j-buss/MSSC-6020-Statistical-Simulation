@@ -6,6 +6,10 @@ execute:
   freeze: auto
 ---
 
+# Numerical Integration
+
+
+
 # Random Numbers
 
 ## 3.1 Pseudorandom number generation
@@ -50,7 +54,7 @@ lehmer.seq <- function(x0, a, m, iterations = 1) {
 ```
 
 ```{r}
-lehmer.rng()
+#lehmer.rng()
 ```
 
 ```{r}
@@ -80,5 +84,8 @@ lcg.rng(x0=3, a=5, c=7, m=200)
 ```
 
 ```{r}
-lcg(1)
+#lcg(1)
 ```
+
+## 3.2 Using Random numbers to Evaluate Integrals
+

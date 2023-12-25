@@ -8,6 +8,9 @@ website:
       - index.qmd
       - src/Chapter_03.qmd
       - src/Chapter_04.qmd
+      - src/Chapter_05.qmd
+      - src/Chapter_06.qmd
+      - src/Chapter_06_1.qmd
 
 format:
   html:

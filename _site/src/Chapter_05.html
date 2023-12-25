@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Chapter 4</title>
+<title>Chapter 5</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../src/Chapter_04.html">Chapter 4</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../src/Chapter_05.html">Chapter 5</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -107,13 +107,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../src/Chapter_04.html" class="sidebar-item-text sidebar-link active">
+  <a href="../src/Chapter_04.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 4</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../src/Chapter_05.html" class="sidebar-item-text sidebar-link">
+  <a href="../src/Chapter_05.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Chapter 5</span></a>
   </div>
 </li>
@@ -127,13 +127,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#generating-discrete-random-variables" id="toc-generating-discrete-random-variables" class="nav-link active" data-scroll-target="#generating-discrete-random-variables">Generating Discrete Random Variables</a>
+  <li><a href="#generating-continuous-random-variables" id="toc-generating-continuous-random-variables" class="nav-link active" data-scroll-target="#generating-continuous-random-variables">Generating Continuous Random Variables</a>
   <ul class="collapse">
-  <li><a href="#the-inverse-transform-method" id="toc-the-inverse-transform-method" class="nav-link" data-scroll-target="#the-inverse-transform-method">4.1 The Inverse Transform Method</a></li>
-  <li><a href="#generating-a-poisson-random-variable" id="toc-generating-a-poisson-random-variable" class="nav-link" data-scroll-target="#generating-a-poisson-random-variable">4.2 Generating a Poisson Random Variable</a></li>
-  <li><a href="#generating-binomial-random-variables" id="toc-generating-binomial-random-variables" class="nav-link" data-scroll-target="#generating-binomial-random-variables">4.3 Generating Binomial Random Variables</a></li>
-  <li><a href="#the-acceptance-rejection-technique" id="toc-the-acceptance-rejection-technique" class="nav-link" data-scroll-target="#the-acceptance-rejection-technique">4.4 The Acceptance-Rejection Technique</a></li>
-  <li><a href="#the-composition-approach" id="toc-the-composition-approach" class="nav-link" data-scroll-target="#the-composition-approach">4.5 The Composition Approach</a></li>
+  <li><a href="#the-inverse-transform-algorithm" id="toc-the-inverse-transform-algorithm" class="nav-link" data-scroll-target="#the-inverse-transform-algorithm">5.1 The Inverse Transform Algorithm</a></li>
+  <li><a href="#the-rejection-method" id="toc-the-rejection-method" class="nav-link" data-scroll-target="#the-rejection-method">5.2 The Rejection Method</a></li>
+  <li><a href="#the-polar-method-for-generating-normal-random-variables" id="toc-the-polar-method-for-generating-normal-random-variables" class="nav-link" data-scroll-target="#the-polar-method-for-generating-normal-random-variables">5.3 The Polar Method for Generating Normal Random Variables</a></li>
+  <li><a href="#generating-a-poisson-process" id="toc-generating-a-poisson-process" class="nav-link" data-scroll-target="#generating-a-poisson-process">5.4 Generating a Poisson Process</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -143,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Chapter 4</h1>
+<h1 class="title">Chapter 5</h1>
 </div>
 
 
@@ -158,22 +157,19 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="generating-discrete-random-variables" class="level1">
-<h1>Generating Discrete Random Variables</h1>
-<section id="the-inverse-transform-method" class="level2">
-<h2 class="anchored" data-anchor-id="the-inverse-transform-method">4.1 The Inverse Transform Method</h2>
+<section id="generating-continuous-random-variables" class="level1">
+<h1>Generating Continuous Random Variables</h1>
+<section id="the-inverse-transform-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="the-inverse-transform-algorithm">5.1 The Inverse Transform Algorithm</h2>
 </section>
-<section id="generating-a-poisson-random-variable" class="level2">
-<h2 class="anchored" data-anchor-id="generating-a-poisson-random-variable">4.2 Generating a Poisson Random Variable</h2>
+<section id="the-rejection-method" class="level2">
+<h2 class="anchored" data-anchor-id="the-rejection-method">5.2 The Rejection Method</h2>
 </section>
-<section id="generating-binomial-random-variables" class="level2">
-<h2 class="anchored" data-anchor-id="generating-binomial-random-variables">4.3 Generating Binomial Random Variables</h2>
+<section id="the-polar-method-for-generating-normal-random-variables" class="level2">
+<h2 class="anchored" data-anchor-id="the-polar-method-for-generating-normal-random-variables">5.3 The Polar Method for Generating Normal Random Variables</h2>
 </section>
-<section id="the-acceptance-rejection-technique" class="level2">
-<h2 class="anchored" data-anchor-id="the-acceptance-rejection-technique">4.4 The Acceptance-Rejection Technique</h2>
-</section>
-<section id="the-composition-approach" class="level2">
-<h2 class="anchored" data-anchor-id="the-composition-approach">4.5 The Composition Approach</h2>
+<section id="generating-a-poisson-process" class="level2">
+<h2 class="anchored" data-anchor-id="generating-a-poisson-process">5.4 Generating a Poisson Process</h2>
 
 
 </section>

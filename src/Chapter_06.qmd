@@ -1,0 +1,15 @@
+---
+title: "Chapter 6"
+format: html
+editor: visual
+execute:
+  freeze: auto
+---
+
+# The Multivariate Normal Distribution
+
+## 6.1 The Multivariate Normal
+
+## 6.2 Generating a Multivariate Normal Random Vector
+
+## Symmetric Matrix Factorizations

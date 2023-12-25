@@ -1,0 +1,17 @@
+---
+title: "Chapter 5"
+format: html
+editor: visual
+execute:
+  freeze: auto
+---
+
+# Generating Continuous Random Variables
+
+## 5.1 The Inverse Transform Algorithm
+
+## 5.2 The Rejection Method
+
+## 5.3 The Polar Method for Generating Normal Random Variables
+
+## 5.4 Generating a Poisson Process
