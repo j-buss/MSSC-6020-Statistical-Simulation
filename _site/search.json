@@ -1,73 +1,24 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "src/Lecture_05.html",
+    "href": "src/Lecture_05.html",
+    "title": "5. Symmetric Matrix PDFs",
     "section": "",
-    "text": "Just a little website to document learning for the book Simulation by Ross Sheldon."
+    "text": "Multivariate Gamma and Inverse Gamma"
   },
   {
-    "objectID": "src/Chapter_04.html",
-    "href": "src/Chapter_04.html",
-    "title": "Chapter 4",
+    "objectID": "src/Lecture_01.html",
+    "href": "src/Lecture_01.html",
+    "title": "1. Numerical Integration",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
-  },
-  {
-    "objectID": "src/Chapter_04.html#generating-discrete-random-variables",
-    "href": "src/Chapter_04.html#generating-discrete-random-variables",
-    "title": "Chapter 4",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
-  },
-  {
-    "objectID": "src/Chapter_04.html#running-code",
-    "href": "src/Chapter_04.html#running-code",
-    "title": "Chapter 4",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
-  },
-  {
-    "objectID": "src/Chapter_03.html",
-    "href": "src/Chapter_03.html",
-    "title": "Chapter 3",
-    "section": "",
-    "text": "Also known as a Lehmer random number generator.\n\\[\nx_n = a x_{n-1} \\,\\text{mod}\\, m\n\\]\nThe limits on the parameters are: \\(0 &lt; x_0 &lt;m\\)\nIf we use the values\n\n\\(a = 2\\)\n\\(m = 7\\)\n\\(x_0 = 6\\)\n\nWe have:\n\n\n\n\\(X\\)\n\n\n\n\n\\(x_0=6\\)\n\n\n\\(x_1=5=2 \\cdot 6 \\;\\text{mod}\\; 7\\)\n\n\n\\(x_2=3=2 \\cdot 5 \\;\\text{mod}\\; 7\\)\n\n\n\\(x_3=6=2 \\cdot 3 \\;\\text{mod}\\; 7\\)\n\n\n\n\nlehmer.seq &lt;- function(x0, a, m, iterations = 1) {\n  counter &lt;- 1\n  temp_val &lt;- x0\n  output_vector &lt;- c(temp_val)\n  while(counter &lt;= iterations){\n    temp_val &lt;- (a * temp_val) %% m\n    output_vector &lt;- c(output_vector, temp_val)\n    counter &lt;- counter + 1\n  }\n  output_vector\n}\n\n\n#lehmer.rng()\n\n\nlehmer.seq(x0=6, a=2, m=7, iterations = 10)\n\n [1] 6 5 3 6 5 3 6 5 3 6 5\n\n\n\n\nLinear congruential generator (LCG):\n\nlcg.rng &lt;- function(x0, a, c, m, iterations = 1) {\n  counter &lt;- 1\n  temp_val &lt;- x0\n  output_vector &lt;- c(temp_val)\n  while(counter &lt; iterations){\n    temp_val &lt;- (a * temp_val + c) %% m\n    output_vector &lt;- c(output_vector, temp_val)\n    counter &lt;- counter + 1\n  }\n  output_vector\n}\n\n\nlcg.rng(x0=3, a=5, c=7, m=200)\n\n[1] 3\n\n\n\n#lcg(1)"
-  },
-  {
-    "objectID": "src/Chapter_03.html#random-numbers",
-    "href": "src/Chapter_03.html#random-numbers",
-    "title": "Chapter 3",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\n\\[\na\n\\]"
-  },
-  {
-    "objectID": "src/Chapter_03.html#running-code",
-    "href": "src/Chapter_03.html#running-code",
-    "title": "Chapter 3",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
-  },
-  {
-    "objectID": "src/Chapter_03.html#pseudorandom-number-generation",
-    "href": "src/Chapter_03.html#pseudorandom-number-generation",
-    "title": "1 - Numerical Integration",
-    "section": "3.1 Pseudorandom number generation",
-    "text": "3.1 Pseudorandom number generation\n\nMultiplicative Congruential Method\nAlso known as a Lehmer random number generator.\n\\[\nx_n = a x_{n-1} \\,\\text{mod}\\, m\n\\]\nThe limits on the parameters are: \\(0 &lt; x_0 &lt;m\\)\nIf we use the values\n\n\\(a = 2\\)\n\\(m = 7\\)\n\\(x_0 = 6\\)\n\nWe have:\n\n\n\n\\(X\\)\n\n\n\n\n\\(x_0=6\\)\n\n\n\\(x_1=5=2 \\cdot 6 \\;\\text{mod}\\; 7\\)\n\n\n\\(x_2=3=2 \\cdot 5 \\;\\text{mod}\\; 7\\)\n\n\n\\(x_3=6=2 \\cdot 3 \\;\\text{mod}\\; 7\\)\n\n\n\n\nlehmer.seq &lt;- function(x0, a, m, iterations = 1) {\n  counter &lt;- 1\n  temp_val &lt;- x0\n  output_vector &lt;- c(temp_val)\n  while(counter &lt;= iterations){\n    temp_val &lt;- (a * temp_val) %% m\n    output_vector &lt;- c(output_vector, temp_val)\n    counter &lt;- counter + 1\n  }\n  output_vector\n}\n\n\n#lehmer.rng()\n\n\nlehmer.seq(x0=6, a=2, m=7, iterations = 10)\n\n [1] 6 5 3 6 5 3 6 5 3 6 5\n\n\n\nMixed Congruential Method\nLinear congruential generator (LCG):\n\nlcg.rng &lt;- function(x0, a, c, m, iterations = 1) {\n  counter &lt;- 1\n  temp_val &lt;- x0\n  output_vector &lt;- c(temp_val)\n  while(counter &lt; iterations){\n    temp_val &lt;- (a * temp_val + c) %% m\n    output_vector &lt;- c(output_vector, temp_val)\n    counter &lt;- counter + 1\n  }\n  output_vector\n}\n\n\nlcg.rng(x0=3, a=5, c=7, m=200)\n\n[1] 3\n\n\n\n#lcg(1)"
-  },
-  {
-    "objectID": "src/Chapter_03.html#using-random-numbers-to-evaluate-integrals",
-    "href": "src/Chapter_03.html#using-random-numbers-to-evaluate-integrals",
-    "title": "1 - Numerical Integration",
-    "section": "3.2 Using Random numbers to Evaluate Integrals",
-    "text": "3.2 Using Random numbers to Evaluate Integrals"
+    "text": "#install.packages(\"devtools\")\nlibrary(devtools)\n\nLoading required package: usethis\n\ninstall_github(\"j-buss/RSSim\")\n\nSkipping install of 'RSSim' from a github remote, the SHA1 (b515ad69) has not changed since last install.\n  Use `force = TRUE` to force installation\n\nlibrary(RSSim)"
   },
   {
     "objectID": "src/Lecture_01.html#pseudorandom-number-generation",
     "href": "src/Lecture_01.html#pseudorandom-number-generation",
     "title": "1. Numerical Integration",
     "section": "3.1 Pseudorandom number generation",
-    "text": "3.1 Pseudorandom number generation\n\nMultiplicative Congruential Method\nAlso known as a Lehmer random number generator.\n\\[\nx_n = a x_{n-1} \\,\\text{mod}\\, m\n\\]\nThe limits on the parameters are: \\(0 &lt; x_0 &lt;m\\)\nIf we use the values\n\n\\(a = 2\\)\n\\(m = 7\\)\n\\(x_0 = 6\\)\n\nWe have:\n\n\n\n\\(X\\)\n\n\n\n\n\\(x_0=6\\)\n\n\n\\(x_1=5=2 \\cdot 6 \\;\\text{mod}\\; 7\\)\n\n\n\\(x_2=3=2 \\cdot 5 \\;\\text{mod}\\; 7\\)\n\n\n\\(x_3=6=2 \\cdot 3 \\;\\text{mod}\\; 7\\)\n\n\n\n\nlehmer.seq &lt;- function(x0, a, m, iterations = 1) {\n  counter &lt;- 1\n  temp_val &lt;- x0\n  output_vector &lt;- c(temp_val)\n  while(counter &lt;= iterations){\n    temp_val &lt;- (a * temp_val) %% m\n    output_vector &lt;- c(output_vector, temp_val)\n    counter &lt;- counter + 1\n  }\n  output_vector\n}\n\n\n#lehmer.rng()\n\n\nlehmer.seq(x0=6, a=2, m=7, iterations = 10)\n\n [1] 6 5 3 6 5 3 6 5 3 6 5\n\n\n\nMixed Congruential Method\nLinear congruential generator (LCG):\n\nlcg.rng &lt;- function(x0, a, c, m, iterations = 1) {\n  counter &lt;- 1\n  temp_val &lt;- x0\n  output_vector &lt;- c(temp_val)\n  while(counter &lt; iterations){\n    temp_val &lt;- (a * temp_val + c) %% m\n    output_vector &lt;- c(output_vector, temp_val)\n    counter &lt;- counter + 1\n  }\n  output_vector\n}\n\n\nlcg.rng(x0=3, a=5, c=7, m=200)\n\n[1] 3\n\n\n\n#lcg(1)"
+    "text": "3.1 Pseudorandom number generation\n\nMultiplicative Congruential Method\nAlso known as a Lehmer random number generator.\n\\[\nx_n = a x_{n-1} \\,\\text{mod}\\, m\n\\]\nThe limits on the parameters are: \\(0 &lt; x_0 &lt;m\\)\nIf we use the values\n\n\\(a = 2\\)\n\\(m = 7\\)\n\\(x_0 = 6\\)\n\nWe have:\n\n\n\n\\(X\\)\n\n\n\n\n\\(x_0=6\\)\n\n\n\\(x_1=5=2 \\cdot 6 \\;\\text{mod}\\; 7\\)\n\n\n\\(x_2=3=2 \\cdot 5 \\;\\text{mod}\\; 7\\)\n\n\n\\(x_3=6=2 \\cdot 3 \\;\\text{mod}\\; 7\\)\n\n\n\n\nlehmer.seq\n\nfunction (x0, a, m, iterations = 1) \n{\n    counter &lt;- 1\n    temp_val &lt;- x0\n    output_vector &lt;- c(temp_val)\n    while (counter &lt; iterations) {\n        temp_val &lt;- (a * temp_val)%%m\n        output_vector &lt;- c(output_vector, temp_val)\n        counter &lt;- counter + 1\n    }\n    output_vector\n}\n&lt;bytecode: 0x599a8355bc18&gt;\n&lt;environment: namespace:RSSim&gt;\n\n\n\nlehmer.seq(x0=6, a=2, m=7, iterations = 10)\n\n [1] 6 5 3 6 5 3 6 5 3 6\n\n\n\nlehmer.rng\n\nfunction (x0, a, m, iterations = 1) \n{\n    lehmer.seq(x0, a, m, iterations)/m\n}\n&lt;bytecode: 0x599a8567b928&gt;\n&lt;environment: namespace:RSSim&gt;\n\n\n\nlehmer.rng(x0=10, a=9, m=4, iterations=19)\n\n [1] 2.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5\n\n\n\nMixed Congruential Method\nLinear congruential generator (LCG):\n\nlcg.seq\n\nfunction (x0, a, c, m, iterations = 1) \n{\n    counter &lt;- 1\n    temp_val &lt;- x0\n    output_vector &lt;- c(temp_val)\n    while (counter &lt; iterations) {\n        temp_val &lt;- (a * temp_val + c)%%m\n        output_vector &lt;- c(output_vector, temp_val)\n        counter &lt;- counter + 1\n    }\n    output_vector\n}\n&lt;bytecode: 0x599a863a8e30&gt;\n&lt;environment: namespace:RSSim&gt;\n\n\n\n#lcg.seq()\n\n\nlcg.rng\n\nfunction (x0, a, c, m, iterations = 1) \n{\n    lcg.seq(x0, a, c, m, iterations)/m\n}\n&lt;bytecode: 0x599a8689bf30&gt;\n&lt;environment: namespace:RSSim&gt;\n\n\n\nlcg.rng(x0=3, a=5, c=7, m=200)\n\n[1] 0.015\n\n\n\n#lcg(1)"
   },
   {
     "objectID": "src/Lecture_01.html#using-random-numbers-to-evaluate-integrals",
@@ -77,10 +28,10 @@
     "text": "3.2 Using Random numbers to Evaluate Integrals"
   },
   {
-    "objectID": "src/Lecture_05.html",
-    "href": "src/Lecture_05.html",
-    "title": "5. Symmetric Matrix PDFs",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
     "section": "",
-    "text": "Multivariate Gamma and Inverse Gamma"
+    "text": "Just a little website to document learning for the book Simulation by Ross Sheldon."
   }
 ]
