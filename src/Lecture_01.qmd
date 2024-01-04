@@ -111,6 +111,11 @@ NumIntegration <- function(func, numberOfX) {
 #NumIntegration(func, range, numberOfX)
 ```
 
+#### Function 1: 
+
+$$
+\int_0^1 e^{(e^x)} dx
+$$
 
 Now use our numerical integration function
 
@@ -133,7 +138,20 @@ print(result)
 
 Results are the same
 
-Now try a different function: 
+Now use Monte Carlo Integration:
+
+```{r}
+n <- 10000
+sum(f1(runif(n)))/n
+```
+
+
+#### Function 2:
+
+$$
+\int_0^1 (1-x^2)^{(3/2)} dx
+$$
+
 ```{r}
 f2 <- function(x){(1-x^2)^(3/2)}
 ```
@@ -178,19 +196,40 @@ NumIntegration2 <- function(func, numberOfX, lowerLimit, upperLimit) {
 ```
 
 ```{r}
+
+sum(f2(runif(n)))/n
+```
+
+#### Function 3:
+
+$$
+\int_{-2}^{2} e^{(x+x^2)} dx
+$$
+
+```{r}
 f3 <- function(x){exp(x+x^2)}
 ```
 
 ```{r}
 NumIntegration2(f3, 10000, -2, 2)
 ```
+
 ```{r}
 result <- integrate(f3, lower = -2, upper = 2)
 # Print the result
 print(result)
 ```
+```{r}
+sum(f3(runif(n)))/n
+```
 
 What about integrals that have an Infinity for the bounds?
+
+#### Function 4:
+
+$$
+\int_{0}^{\infty} x * (1 + x^2)^{-2} dx
+$$
 
 ```{r}
 f4 <- function(x){x * (1 + x^2)^(-2)}
@@ -217,6 +256,16 @@ NumIntegration3 <- function(func, numberOfX, lowerLimit, upperLimit) {
 ```{r}
 NumIntegration3(f4, 100000, lowerLimit = 0, upperLimit = Inf)
 ```
+```{r}
+sum(f4(runif(n)))/n
+```
+
+
+#### Function 5:
+
+$$
+\int_{-\infty}^{\infty} e^{-x^2} dx
+$$
 
 ```{r}
 f5 <- function(x){exp(-1*(x^2))}
@@ -232,22 +281,10 @@ result <- integrate(f5, lower = -Inf, upper = Inf)
 print(result)
 ```
 
-Now use Monte Carlo Integration:
 
-```{r}
-n <- 10000
-sum(f1(runif(n)))/n
-```
 
-```{r}
-sum(f2(runif(n)))/n
-```
 
-```{r}
-sum(f3(runif(n)))/n
-```
 
-```{r}
-sum(f4(runif(n)))/n
-```
+
+
 
