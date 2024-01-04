@@ -184,17 +184,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("devtools")</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: usethis</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">"j-buss/RSSim"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Skipping install of 'RSSim' from a github remote, the SHA1 (b515ad69) has not changed since last install.
-  Use `force = TRUE` to force installation</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSSim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">"j-buss/RSSim"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSSim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="numerical-integration" class="level1">
 <h1>Numerical Integration</h1>
@@ -239,7 +230,6 @@ x_n = a x_{n-1} \,\text{mod}\, m
 </tbody>
 </table>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>lehmer.seq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (x0, a, m, iterations = 1) 
 {
@@ -253,29 +243,26 @@ x_n = a x_{n-1} \,\text{mod}\, m
     }
     output_vector
 }
-&lt;bytecode: 0x5bfc3c6f6cf0&gt;
+&lt;bytecode: 0x5cacb00da780&gt;
 &lt;environment: namespace:RSSim&gt;</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lehmer.seq</span>(<span class="at">x0=</span><span class="dv">6</span>, <span class="at">a=</span><span class="dv">2</span>, <span class="at">m=</span><span class="dv">7</span>, <span class="at">iterations =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 6 5 3 6 5 3 6 5 3 6</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>lehmer.rng</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (x0, a, m, iterations = 1) 
 {
     lehmer.seq(x0, a, m, iterations)/m
 }
-&lt;bytecode: 0x5bfc3e8302b0&gt;
+&lt;bytecode: 0x5cacb0ab6ad8&gt;
 &lt;environment: namespace:RSSim&gt;</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lehmer.rng</span>(<span class="at">x0=</span><span class="dv">10</span>, <span class="at">a=</span><span class="dv">9</span>, <span class="at">m=</span><span class="dv">4</span>, <span class="at">iterations=</span><span class="dv">19</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 2.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</code></pre>
 </div>
@@ -283,8 +270,20 @@ x_n = a x_{n-1} \,\text{mod}\, m
 <section id="mixed-congruential-method" class="level4">
 <h4 class="anchored" data-anchor-id="mixed-congruential-method">Mixed Congruential Method</h4>
 <p><a href="https://en.wikipedia.org/wiki/Linear_congruential_generator">Linear congruential generator</a> (LCG):</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>INSERT Math formula for LCG</p>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>lcg.seq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (x0, a, c, m, iterations = 1) 
 {
@@ -298,40 +297,140 @@ x_n = a x_{n-1} \,\text{mod}\, m
     }
     output_vector
 }
-&lt;bytecode: 0x5bfc3f55fcf8&gt;
+&lt;bytecode: 0x5cacb0f2c430&gt;
 &lt;environment: namespace:RSSim&gt;</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#lcg.seq()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>lcg.rng</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (x0, a, c, m, iterations = 1) 
 {
     lcg.seq(x0, a, c, m, iterations)/m
 }
-&lt;bytecode: 0x5bfc3fa52df8&gt;
+&lt;bytecode: 0x5cacb12f53b8&gt;
 &lt;environment: namespace:RSSim&gt;</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lcg.rng</span>(<span class="at">x0=</span><span class="dv">3</span>, <span class="at">a=</span><span class="dv">5</span>, <span class="at">c=</span><span class="dv">7</span>, <span class="at">m=</span><span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.015</code></pre>
 </div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#lcg(1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 </section>
 <section id="using-random-numbers-to-evaluate-integrals" class="level2">
 <h2 class="anchored" data-anchor-id="using-random-numbers-to-evaluate-integrals">3.2 Using Random numbers to Evaluate Integrals</h2>
+<p>Function defined for numerical Integration</p>
+<section id="function-1" class="level4">
+<h4 class="anchored" data-anchor-id="function-1">Function 1:</h4>
+<p><span class="math display">\[
+\int_0^1 e^{(e^x)} dx
+\]</span></p>
+<p>Now use our numerical integration function</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6.219394</code></pre>
+</div>
+</div>
+<p>Now use the R function “integrate”</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>6.316564 with absolute error &lt; 7e-14</code></pre>
+</div>
+</div>
+<p>Results are the same</p>
+<p>Now use Monte Carlo Integration:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6.322005</code></pre>
+</div>
+</div>
+</section>
+<section id="function-2" class="level4">
+<h4 class="anchored" data-anchor-id="function-2">Function 2:</h4>
+<p><span class="math display">\[
+\int_0^1 (1-x^2)^{(3/2)} dx
+\]</span></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5890486</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>0.5890486 with absolute error &lt; 1.3e-05</code></pre>
+</div>
+</div>
+<p>Results are the same again. Yeah!</p>
+<p>What about when the limits of integration are different?:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5886263</code></pre>
+</div>
+</div>
+</section>
+<section id="function-3" class="level4">
+<h4 class="anchored" data-anchor-id="function-3">Function 3:</h4>
+<p><span class="math display">\[
+\int_{-2}^{2} e^{(x+x^2)} dx
+\]</span></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 93.16274</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>93.16275 with absolute error &lt; 0.00062</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.729411</code></pre>
+</div>
+</div>
+<p>What about integrals that have an Infinity for the bounds?</p>
+</section>
+<section id="function-4" class="level4">
+<h4 class="anchored" data-anchor-id="function-4">Function 4:</h4>
+<p><span class="math display">\[
+\int_{0}^{\infty} x * (1 + x^2)^{-2} dx
+\]</span></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>0.5 with absolute error &lt; 3.3e-09</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5000037</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2496863</code></pre>
+</div>
+</div>
+</section>
+<section id="function-5" class="level4">
+<h4 class="anchored" data-anchor-id="function-5">Function 5:</h4>
+<p><span class="math display">\[
+\int_{-\infty}^{\infty} e^{-x^2} dx
+\]</span></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.772454</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>1.772454 with absolute error &lt; 4.3e-06</code></pre>
+</div>
+</div>
 
 
+</section>
 </section>
 </section>
 
