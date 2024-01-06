@@ -52,18 +52,26 @@ We have:
 | $x_3=6=2 \cdot 3 \;\text{mod}\; 7$ |
 
 ```{r}
+#| echo: True
+
 lehmer.seq
 ```
 
 ```{r}
+#| echo: True
+#| 
 lehmer.seq(x0=6, a=2, m=7, iterations = 10)
 ```
 
 ```{r}
+#| echo: True
+
 lehmer.rng
 ```
 
 ```{r}
+#| echo: True
+
 lehmer.rng(x0=10, a=9, m=4, iterations=19)
 ```
 
@@ -76,30 +84,36 @@ INSERT Math formula for LCG
 :::
 
 ```{r}
+#| echo: True
+
 lcg.seq
 ```
 
 ```{r}
+#| echo: True 
+
 #lcg.seq()
 ```
 
 ```{r}
+#| echo: True
+
 lcg.rng
 ```
 
 ```{r}
-lcg.rng(x0=3, a=5, c=7, m=200)
-```
+#| echo: True
 
-```{r}
-#lcg(1)
+lcg.rng(x0=3, a=5, c=7, m=200)
 ```
 
 ## 3.2 Using Random numbers to Evaluate Integrals
 
-Function defined for numerical Integration
+IFunction defined for numerical Integration
 
 ```{r}
+#| echo: True
+#| 
 NumIntegration <- function(func, numberOfX) {
   startInt <- (1 / numberOfX)/2
   x <- seq(startInt, 1 - startInt, length.out = numberOfX)
@@ -107,28 +121,31 @@ NumIntegration <- function(func, numberOfX) {
 }
 ```
 
-```{r}
-#NumIntegration(func, range, numberOfX)
-```
-
-#### Function 1: 
+#### Function 1:
 
 $$
 \int_0^1 e^{(e^x)} dx
 $$
 
-Now use our numerical integration function
+If we want to use Monte Carlo Integration with Uniform sampling the easiest integral will be one on the range of 0 to 1.
+
+First we define the function in R:
 
 ```{r}
+#| echo: true
+#| 
 f1 <- function(x){exp(exp(x))}
 ```
 
+Now we calculate the integral using our NumIntegration function. This is utilizing the Reimann midpoint sum.
+
+Here we utilize a very small number of 4 rectangles:
+
 ```{r}
 NumIntegration(f1, 4)
-
 ```
 
-Now use the R function "integrate"
+Now use the R function to `integrate`
 
 ```{r}
 result <- integrate(f1, lower = 0, upper = 1)
@@ -136,15 +153,14 @@ result <- integrate(f1, lower = 0, upper = 1)
 print(result)
 ```
 
-Results are the same
+The results are the same.
 
-Now use Monte Carlo Integration:
+Now use [Monte Carlo Integration](https://en.wikipedia.org/wiki/Monte_Carlo_integration) using the uniform sampling
 
 ```{r}
 n <- 10000
 sum(f1(runif(n)))/n
 ```
-
 
 #### Function 2:
 
@@ -167,6 +183,11 @@ print(result)
 ```
 
 Results are the same again. Yeah!
+
+```{r}
+
+sum(f2(runif(n)))/n
+```
 
 What about when the limits of integration are different?:
 
@@ -195,11 +216,6 @@ NumIntegration2 <- function(func, numberOfX, lowerLimit, upperLimit) {
 }
 ```
 
-```{r}
-
-sum(f2(runif(n)))/n
-```
-
 #### Function 3:
 
 $$
@@ -219,8 +235,33 @@ result <- integrate(f3, lower = -2, upper = 2)
 # Print the result
 print(result)
 ```
+
 ```{r}
 sum(f3(runif(n)))/n
+```
+
+Well...that doesn't look right. Why doesn't our Monte Carlo integration work with this integral? The limits are incorrect. Our Monte Carlo integration is assumed to be on the range from 0 to 1. Instead this integral is defined from -2 to 2. We need to modify our Monte Carlo Integration a bit.
+
+Change of variable:
+
+If we want $\theta = \int_a^b g(x)dx$ then we do a change of variable:
+
+$$y = \frac{x-a}{b-a}$$
+
+Which gives us
+
+$$\frac{dy}{dx} = \frac{1}{b-a} \; \text{or} \; dy(b-a)=dx$$
+
+Then we have $x=y(b-a)+a$
+
+y = x/4 + 1/2
+
+h(y) = (2 - -2)g(-2 + 4y)=4 g(4y-2)
+
+```{r}
+n <- 100000
+f3b <- function(x){4*exp((4*x - 2)+(4*x - 2)^2)}
+sum(f3b(runif(n)))/n
 ```
 
 What about integrals that have an Infinity for the bounds?
@@ -256,10 +297,15 @@ NumIntegration3 <- function(func, numberOfX, lowerLimit, upperLimit) {
 ```{r}
 NumIntegration3(f4, 100000, lowerLimit = 0, upperLimit = Inf)
 ```
+
 ```{r}
 sum(f4(runif(n)))/n
 ```
 
+```{r}
+f4b <- function(x){((1 - x)/x^3)/(1/x^2 - 2/x + 2)^2}
+sum(f4b(runif(n)))/n
+```
 
 #### Function 5:
 
@@ -280,11 +326,3 @@ result <- integrate(f5, lower = -Inf, upper = Inf)
 # Print the result
 print(result)
 ```
-
-
-
-
-
-
-
-
